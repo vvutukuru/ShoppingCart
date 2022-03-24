@@ -17,5 +17,10 @@ namespace Core.Entities
                    UnitPrice == item.UnitPrice &&
                    Quantity == item.Quantity;
         }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(ProductCode, UnitPrice, Quantity);
+        }
     }
 }
